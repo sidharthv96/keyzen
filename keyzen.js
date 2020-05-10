@@ -106,7 +106,6 @@ function keyHandler(e) {
       data.word_errors[data.word_index] = true;
     }
     data.word_index += 1;
-    console.log(word_cleared());
     if (word_cleared()) {
       setTimeout(next_word, 400);
     }
