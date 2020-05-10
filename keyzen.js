@@ -5,11 +5,6 @@ var start_time = 0;
 var hpm = 0;
 var ratio = 0;
 
-data.chars =
-  ' jfkdlsahgyturieowpqbnvmcxz6758493021`-=[]\\;\',./ABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_+{}|:"<>?';
-data.consecutive = 5;
-data.word_length = 7;
-data.current_layout = 'colemak';
 layouts = {};
 layouts['colemak'] =
   ' ntesiroahdjglpufywqbkvmcxz1234567890\'",.!?:;/@$%&#*()_ABCDEFGHIJKLMNOPQRSTUVWXYZ~+-={}|^<>`[]\\';
@@ -22,6 +17,11 @@ layouts['b�po'] =
 layouts['norman'] =
   ' ntieosaygjkufrdlw;qbpvmcxz1234567890\'",.!?:;/@$%&#*()_ABCDEFGHIJKLMNOPQRSTUVWXYZ~+-={}|^<>`[]\\';
 layouts['code-es6'] = ' {}\',;():.>=</_-|`!?#[]\\+"@$%&*~^';
+
+data.consecutive = 5;
+data.word_length = 7;
+data.current_layout = 'colemak';
+data.chars = layouts[data.current_layout];
 
 $(document).ready(function () {
   if (localStorage.data != undefined) {
