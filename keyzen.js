@@ -80,6 +80,13 @@ function set_layout(l) {
   render();
 }
 
+function word_cleared() {
+  return (
+    data.word_index >= data.word.length &&
+    !Object.values(data.word_errors).reduce((a, b) => a || b)
+  );
+}
+
 function keyHandler(e) {
   start_stats();
 
@@ -99,7 +106,7 @@ function keyHandler(e) {
       data.word_errors[data.word_index] = true;
     }
     data.word_index += 1;
-    if (data.word_index >= data.word.length) {
+    if (word_cleared()) {
       setTimeout(next_word, 400);
     }
   } else if (key == 'Backspace') {
